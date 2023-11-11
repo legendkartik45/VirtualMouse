@@ -191,5 +191,3 @@ This project illustrates how to use computer operations through hand gestures an
 1. [Abhik Banerjee, Abhirup Ghosh and Koustuvmoni Bharadwaj, "Mouse Control using a Web Camera based on Color Detection”](https://ijcttjournal.org/archives/ijctt-v9p104)
 1. [A Review of the Hand Gesture Recognition System: Current Progress and Future Directions ](https://ieeexplore.ieee.org/document/9622242)
 
-
-***Final Year BTech(CSE) Project-I Report 2022-23*** 
