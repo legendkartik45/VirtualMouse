@@ -130,7 +130,9 @@ Following is the methodology proposed for the project:
 - The main problem that we are facing is detecting and separating the hand from the image. There are many problems like the background color, different sizes of hands, and other body parts like the face, arm etc. So instead of creating our own model to detect the hand we can use the already-built Google media pipe that is trained to detect and separate the hand from the background. 
 - We will be using Google’s Mediapipe to detect and track the hand from the image frame and the Google’s media pipe returns the landmark of the hand. There are 21 landmarks of one hand that are returned. The landmark returned by the media pipe are shown below. 
 
-![](./sc/Aspose.Words.450fdbc3-d918-4b41-9aab-622e70608aa0.002.jpeg)
+<div align="center">
+  <img src="https://github.com/legendkartik45/Virtual-Mouse-Using-Hand-Gestures/blob/main/sc/Aspose.Words.450fdbc3-d918-4b41-9aab-622e70608aa0.002.jpeg" width="750"  style="margin: 10px;"/>
+</div>
 
 ![](./sc/Aspose.Words.450fdbc3-d918-4b41-9aab-622e70608aa0.003.jpeg)
 
