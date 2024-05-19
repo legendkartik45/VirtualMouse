@@ -134,6 +134,3 @@ This project illustrates how to use computer operations through hand gestures an
 1. H. Xu, X. Hou, R. Su and Q. Ni,[ "Real-time Hand Gesture Recognition System based on Associative Processors", The 2nd IEEE International Conference on Computer Science and Information Technology, pp. 14-18, August 2009.](https://ieeexplore.ieee.org/abstract/document/5234784)
 1. Q. Zhang, F. Chen and X. Liu,[ "Hand Gesture Detection and Segmentation Based on Difference Background Image with Complex Background", 2008 International Conference on Embedded Software and Systems (ICESS2008), pp. 338-343, July 2008.](https://ieeexplore.ieee.org/document/4595579)
 5. V.I.Pavlovic, R.sharma, and T.S.Huang,[ "Visual Interpretation of Hand Gestures for Human-Computer Interaction: A Review," IEEE Trans. On PAMI, vol 19,pp.677-695,1997](https://ieeexplore.ieee.org/document/598226)
-***Final Year BTech(CSE) Project-I Report 2022-23***                                                                            Page 17** of 17**
-
-[ref1]: ./sc/Aspose.Words.450fdbc3-d918-4b41-9aab-622e70608aa0.001.png
