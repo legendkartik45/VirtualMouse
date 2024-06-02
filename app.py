@@ -52,17 +52,12 @@ def main():
 
     use_brect = True
 
-    # Camera preparation ###############################################################
+    # Camera preparation #
     cap = cv.VideoCapture(cap_device,cv.CAP_DSHOW)
-    #cap.resize()
-    file_name = "video location here"
-    window_name = "window"
-    # cv.namedWindow(window_name, cv.WND_PROP_FULLSCREEN)
-    # cv.setWindowProperty(window_name, cv.WND_PROP_FULLSCREEN, cv.WINDOW_FULLSCREEN)
     cap.set(cv.CAP_PROP_FRAME_WIDTH, 1920)
     cap.set(cv.CAP_PROP_FRAME_HEIGHT, 1080)
 
-    # Model load #############################################################
+    # Model load 
     mp_hands = mp.solutions.hands
     hands = mp_hands.Hands(
         static_image_mode=use_static_image_mode,
@@ -75,7 +70,7 @@ def main():
 
     point_history_classifier = PointHistoryClassifier()
 
-    # Read labels ###########################################################
+    # Read labels 
     with open('model/keypoint_classifier/keypoint_classifier_label.csv',
               encoding='utf-8-sig') as f:
         keypoint_classifier_labels = csv.reader(f)
@@ -90,43 +85,43 @@ def main():
             row[0] for row in point_history_classifier_labels
         ]
 
-    # FPS Measurement ########################################################
+    # FPS Measurement 
     cvFpsCalc = CvFpsCalc(buffer_len=10)
 
-    # Coordinate history #################################################################
+    # Coordinate history 
     history_length = 16
     point_history = deque(maxlen=history_length)
 
-    # Finger gesture history ################################################
+    # Finger gesture history 
     finger_gesture_history = deque(maxlen=history_length)
 
-    #  ########################################################################
+    #  #
     mode = 0
 
     while True:
         fps = cvFpsCalc.get()
 
-        # Process Key (ESC: end) #################################################
+        # Process Key (ESC: end) #
         key = cv.waitKey(5)
         if key == 27:  # ESC
             break
         number, mode = select_mode(key, mode)
 
-        # Camera capture #####################################################
+        # Camera capture 
         ret, image = cap.read()
         if not ret:
             break
         image = cv.flip(image, 1)  # Mirror display
         debug_image = copy.deepcopy(image)
 
-        # Detection implementation #############################################################
+        # Detection implementation 
         image = cv.cvtColor(image, cv.COLOR_BGR2RGB)
 
         image.flags.writeable = False
         results = hands.process(image)
         image.flags.writeable = True
 
-        #  ####################################################################
+        #  
         if results.multi_hand_landmarks is not None:
             for hand_landmarks, handedness in zip(results.multi_hand_landmarks,
                                                   results.multi_handedness):
@@ -198,7 +193,7 @@ def main():
         debug_image = draw_point_history(debug_image, point_history)
         debug_image = draw_info(debug_image, fps, mode, number)
 
-        # Screen reflection #############################################################
+        # Screen reflection 
         cv.imshow('Hand Gesture Recognition', debug_image)
 
     cap.release()

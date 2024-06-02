@@ -3,11 +3,11 @@ name: Build and Package
 on:
   push:
     branches:
-      - main  # Adjust the branch as needed
+      - main 
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # Use the latest version of Ubuntu as the runner
+    runs-on: ubuntu-latest  
 
     steps:
     - name: Checkout code
@@ -16,21 +16,27 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: 3.9  # Adjust the Python version as needed
+        python-version: 3.12  
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt  # Install your Python dependencies
+        pip install -r requirements.txt 
+
+    - name: Install additional tools
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y upx
 
     - name: Build executable
       run: |
         pip install pyinstaller
-        pyinstaller --onefile --windowed app.py
-        # Add additional commands if necessary to prepare your data files, models, etc.
+        pyinstaller --onefile --windowed --exclude-module test --exclude-module tests --exclude-module __pycache__ app.py
+        upx --best --ultra-brute dist/app
 
     - name: Archive artifacts
       uses: actions/upload-artifact@v4
       with:
         name: app  
         path: dist/app  
+        retention-days: 5  # Optional: Set how many days you want to keep the artifact
