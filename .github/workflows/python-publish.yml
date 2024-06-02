@@ -11,10 +11,10 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
         python-version: 3.9  # Adjust the Python version as needed
 
@@ -30,7 +30,7 @@ jobs:
         # Add additional commands if necessary to prepare your data files, models, etc.
 
     - name: Archive artifacts
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
-        name: my_application  # Adjust the artifact name as needed
-        path: dist/my_application  # Adjust the path to your executable
+        name: app  
+        path: dist/app  
