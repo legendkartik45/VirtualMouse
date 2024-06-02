@@ -23,20 +23,14 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt 
 
-    - name: Install additional tools
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y upx
-
     - name: Build executable
       run: |
         pip install pyinstaller
-        pyinstaller --onefile --windowed --exclude-module test --exclude-module tests --exclude-module __pycache__ app.py
-        upx --best --ultra-brute dist/app
+        pyinstaller --onefile --windowed app.py
+        # Add additional commands if necessary to prepare your data files, models, etc.
 
     - name: Archive artifacts
       uses: actions/upload-artifact@v4
       with:
         name: app  
         path: dist/app  
-        retention-days: 5  # Optional: Set how many days you want to keep the artifact
