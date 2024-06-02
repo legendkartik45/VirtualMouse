@@ -1,5 +1,4 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+
 import csv
 import copy
 import argparse
@@ -40,7 +39,7 @@ def get_args():
 
 
 def main():
-    # Argument parsing #################################################################
+    
     args = get_args()
 
     cap_device = args.device
@@ -419,15 +418,15 @@ def draw_landmarks(image, landmark_point):
 
     # Key Points
     for index, landmark in enumerate(landmark_point):
-        if index == 0:  # 手首1
+        if index == 0:  
             cv.circle(image, (landmark[0], landmark[1]), 5, (255, 255, 255),
                       -1)
             cv.circle(image, (landmark[0], landmark[1]), 5, (0, 0, 0), 1)
-        if index == 1:  # 手首2
+        if index == 1:  
             cv.circle(image, (landmark[0], landmark[1]), 5, (255, 255, 255),
                       -1)
             cv.circle(image, (landmark[0], landmark[1]), 5, (0, 0, 0), 1)
-        if index == 2:  # 親指：付け根
+        if index == 2:  
             cv.circle(image, (landmark[0], landmark[1]), 5, (255, 255, 255),
                       -1)
             cv.circle(image, (landmark[0], landmark[1]), 5, (0, 0, 0), 1)
