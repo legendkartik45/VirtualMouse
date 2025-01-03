@@ -127,6 +127,8 @@ The obtained classification is shown in the image at real-time and is shown belo
 
 This project illustrates how to use computer operations through hand gestures and movements, which is one of the most efficient methods to utilize a computer. It’s one of the most fundamental ways of human-computer communication. It’s a budget-friendly strategy. Using this strategy, we may quickly and simply accomplish practically any fundamental operation, as well as keyboard shortcuts. We may use this method to develop our own code to do whatever action we want. However, this system cannot recognize the movement of the hand as a gesture. Different combinations of hand gestures are used to perform different mouse operations.  
 
+
+
 **References** 
 
 1. Amornched Jinda-apiraksa, Warong Pongstiensak, and Toshiaki Kondo,[ "A Simple Shape-Based Approach to Hand Gesture Recognition", in Proceedings of IEEE International Conference on Electrical Engineering/ Electronics Computer Telecommunications and Information Technology (ECTI-CON), Pathumthani, Thailand, pages 851-855, May 2010](https://ieeexplore.ieee.org/document/5491589)
